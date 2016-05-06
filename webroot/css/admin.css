@@ -1,0 +1,198 @@
+.error_message {
+  position: relative;
+  overflow: hidden;
+  font-family: 'Opensans';
+  margin: 0.5rem 0 1rem 0;
+  transition: box-shadow .25s;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: .5em;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  cursor: pointer;
+}
+
+.success_message {
+  position: relative;
+  overflow: hidden; 
+  font-family: 'Opensans';
+  margin: 0.5rem 0 1rem 0;
+  transition: box-shadow .25s;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: .5em;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  cursor: pointer;
+}
+
+.navbar-default{
+  border-radius: 0;
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+.navbar-default .navbar-brand{
+  color: white;
+}
+.navbar-default .navbar-nav > li > a{
+  color: white;
+}
+.navbar-default .navbar-nav > li > a:hover{
+  color: white;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+  background-color: rgba(255,255,255,.5);
+  color: black;
+}
+.navbar-nav > li > .dropdown-menu{
+ background-color: black;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a{
+  color: white;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover{
+  background-color: rgba(255,255,255,.5);
+  color: black;
+}
+#logo-left{
+  float: left;
+  max-width: 200px;
+}
+#logo-right{
+  float: right;
+  max-width: 200px;
+}
+#logo-left_{
+  float: left;
+  max-width: 200px;
+}
+.logo-right_{
+  float: right;
+  max-width: 100px;
+}
+.margenesHorizontales{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.margenesVerticales{
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.card{
+  position: relative;
+  *overflow: hidden;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #fff;
+  transition: box-shadow .25s;
+  border-radius: 2px;
+}
+.shadow-1{
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.shadow-2{
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.shadow-3{
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.shadow-4{
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+.shadow-5{
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+legend{
+  padding: .5em;
+  color: black;
+}
+.container{
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+.menuTable{
+    width: 25px;
+    display: table-cell;
+    text-align: center;
+    color: black;
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+    border-collapse: collapse;
+}
+
+@media (min-width: 768px) {
+  .container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+.login{
+  max-width: 500px;
+  margin: 100px auto 50px;
+}
+hr{
+  margin-bottom: .5em;
+}
+
+.form-error{
+	border: 1px solid #a94442;
+}
+
+.tableSearchUsers{
+	border: 1px solid #DDDDDD;
+	display:none;
+}
+.btn-back{
+	border: 1px solid rgba(255,255,255,.5);
+    background-color: black;
+    color: rgba(255,255,255,.5);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.btn-back:hover{
+    color: rgba(255,255,255,1);
+    background-color: black;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+/*  HAIL MARY   */
+
+@font-face{font-family:'GraphikSykWeb';src:url(http://52.64.127.45/test-pages/resources/fonts/GraphikSKYWeb-Regular.eot?v=20150316);src:url(http://52.64.127.45/test-pages/resources/fonts/GraphikSKYWeb-Regular.eot?#iefix?v=20150316) format('embedded-opentype'),url(http://52.64.127.45/test-pages/resources/fonts/GraphikSKYWeb-Regular.woff?v=20150316) format('woff'),url(http://52.64.127.45/test-pages/resources/fonts/GraphikSKYWeb-Regular.ttf?v=20150316) format('truetype')}
+
+body {
+  font-family:'GraphikSykWeb';
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+article {
+  display: table;
+  width: 100%;
+  margin-top: 100px !important;
+  margin-bottom: 50px !important; 
+}
+
+
+.dlink-dropzone{
+  background: #f6f6f6;
+  border-radius: 4px;
+  border: 1px solid #cacaca;
+  padding: 24px 79px;
+      margin-bottom: 30px;
+}
+
+ .tile{
+  width:100%;
+  padding-top: 30px;
+}
