@@ -24,7 +24,11 @@ window.fbAsyncInit = function() {
 <section id="index">
 
 
-  <?php if(empty($passes)){ ?>
+  <?php 
+
+
+
+  if(empty($passes)){ ?>
     <div id="empty">
       <h1>Come back soon...</h1>
       <p>Sorry, no deals on at the moment. Try again tomorrow.</p>
@@ -50,7 +54,7 @@ $code['code'] = "";
   }
   ?>
 
-
+    <input id="statusBuyer" value="<?php echo $msj;?>" type="hidden">
     <div class="pass" name="<?php echo ucwords($value['Pass']['name']); ?>" date="<?php echo $date; ?>" old="<?php echo $value['Pass']['old_price']; ?>" new="<?php if($value['Pass']['new_price'] > 0) echo '$'.$value['Pass']['new_price']; else echo "FREE"; ?>" id="<?php echo $code['code']; ?>" idcode="<?php echo $code['id']; ?>" passid="<?php echo $value['Pass']['id']; ?>" left="<?php echo $value['Pass']['top']; ?>">
       <p class="title"><?php echo ucwords($value['Pass']['name']); ?>, <b><?php echo $date; ?></b>
       <?php $sold=0; if($value['Pass']['top']==0){ $sold=1;?>
@@ -75,7 +79,6 @@ $code['code'] = "";
         <div id="pass_1" class="owl-carousel">
           <?php foreach ($value['Game'] as $key => $value) { ?>
             <div class="item" style="background-image:url('<?php echo $this->webroot; ?>files/<?php echo $value['image']; ?>');">
-              <!-- <img src="<?php echo $this->webroot; ?>files/<?php echo $value['image']; ?>"> -->
               <div class="tile_descr"><?php echo ucwords($value['name']); ?></div>
             </div>
           <?php } ?>
@@ -121,7 +124,8 @@ $code['code'] = "";
             <input type="checkbox" id="terms"><label>I agree to the <a href="#">terms</a></label>
           </div>
           <div class="col-md-6">
-            <button id="next_btn" class="hail_btn" type="button">NEXT ></button>
+            <!-- <a target="_blank" href="<?php echo $this->webroot;?>">NEXT</a> -->
+            <button id="next_btn" class="hail_btn" type="button">NEXT</button>
           </div>
         </div>
       </div>
@@ -212,8 +216,16 @@ $code['code'] = "";
 var code;
 var name;
 var date;
-
+var uname;
 $(document).ready(function() {
+
+  if ( $('#statusBuyer').val() == 1 ){
+    $('.grab_deal').click()
+    $('#client_name').html('Thanks <?php echo $this->Session->read("name")?> check your inbox for your code, or if you prefer, we can txt it to your mobile.');
+    $('#step_1').addClass('hidden');
+    $('#step_3').removeClass('hidden');
+  }
+
   $('.owl-carousel').owlCarousel({
     loop:true,
     margin:20,
@@ -288,21 +300,25 @@ $('#deal_confirmation_modal').on('hidden.bs.modal', function () {
 })
 
 $('#next_btn').click(function(event) {
-  if($('#terms').is(':checked')){
-    var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
-    if($('#name').val() == "" || $('#last').val() == "" || $('#email').val() == "" ){
-      alert('Please, enter all data');
-    }else{
-      if(!pattern.test($('#email').val())){
-        alert('Please, enter correct email');
+  if( $('#statusBuyer').val() != 1 ){ 
+    uname = $('#name').val() +" "+$('#last').val();
+    if($('#terms').is(':checked')){
+      var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+      if($('#name').val() == "" || $('#last').val() == "" || $('#email').val() == "" ){
+        alert('Please, enter all data');
       }else{
-        $('#client_name').html('Thanks '+$('#name').val()+' check your inbox for your code, or if you prefer, we can txt it to your mobile.');
-        $('#step_1').addClass('hidden');
-        $('#step_2').removeClass('hidden');
+        if(!pattern.test($('#email').val())){
+          alert('Please, enter correct email');
+        }else{
+          window.location = '<?php echo $this->webroot; ?>passes/buy/'+uname+'/'+$('#email').val()+'/'+idcode+'/'+passid+'/'+code+'/'+new_;
+          // $('#client_name').html('Thanks '+$('#name').val()+' check your inbox for your code, or if you prefer, we can txt it to your mobile.');
+          // $('#step_1').addClass('hidden');
+          // $('#step_2').removeClass('hidden');
+        }
       }
+    }else{
+      alert('You must agree to the terms');
     }
-  }else{
-    alert('You must agree to the terms');
   }
 });
 

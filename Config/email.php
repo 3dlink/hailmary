@@ -90,13 +90,13 @@ class EmailConfig {
 
 
 
-	public $_temp = array(
-		'host' => '3dlinkweb.com',
-		'port' => 26,
-		'username' => 'info@3dlinkweb.com',
-		'password' => 'london.123',
-		'transport' => 'Smtp'
-	);
+	// public $_temp = array(
+	// 	'host' => '3dlinkweb.com',
+	// 	'port' => 26,
+	// 	'username' => 'info@3dlinkweb.com',
+	// 	'password' => 'london.123',
+	// 	'transport' => 'Smtp'
+	// );
 
 
 	// public $_temp = array(
@@ -122,6 +122,18 @@ class EmailConfig {
 	// 	'username' => 'contacto@pikos.com.ve',
 	// 	'password' => 'pikosweb123456',
 	// 	'transport' => 'Smtp'
-	// );
+	// );	
+
+	public $_temp = array(
+		'transport' => 'Smtp',
+		'from' => array('info@buildingsoftware.co' => 'Hail Mary'),
+		'host' => 'smtp.sendgrid.net',
+		'port' => 587,
+		'timeout' => 30,
+		'username' => 'buildingSoftware',
+		'password' => 'AdmWDILOT122190',
+		'client' => null,
+		'log' => false,
+	);
 
 }

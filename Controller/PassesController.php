@@ -3,6 +3,9 @@ App::uses('AppController', 'Controller');
 
 require_once("PHPExcel/IOFactory.php");
 require_once("PHPExcel/PHPExcel.php");
+
+require_once("payment/DPSProcessor.php");
+
 /**
  * Passes Controller
  *
@@ -239,5 +242,36 @@ class PassesController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 
+	public function buy($name,$email,$idcode,$passid,$code,$price){
+		$this->layout=false;
+		$this->autoRender=false;
+		$price = str_replace("$", "", $price);
+		$this->Session->write('name', $name);
+		$this->Session->write('email', $email);
+		$this->Session->write('idcode', $idcode);
+		$this->Session->write('passid', $passid);
+		$this->Session->write('code', $code);
+		$this->Session->write('price', $price);
+
+
+		// echo $this->Session->read('Person'); // Green
+		$dpsUserId = 'FanPassPxP_Dev';
+		$dpsUserKey = '9ee39b943bb27aa0329c1a14593e0235682fdbb615d489385e5c3286ee42fff9';
+
+
+		// $successUrl = 'http://hailmary.co.nz/payments/response.php';
+		// $failUrl = 'http://hailmary.co.nz/payments/response.php';
+
+		$successUrl = 'http://localhost/3d/hailmary/pages/response';
+		$failUrl = 'http://localhost/3d/hailmary/pages/response';
+
+		$dps = new DPSProcessor($dpsUserId, $dpsUserKey);
+
+		$transactionId=uniqid();
+
+		$url = $dps->redirectToGateway($transactionId,'testPayment', $price, 'some txt data', 'pchalacis@gmail.com', $successUrl, $failUrl);
+				echo $url;
+		return $this->redirect($url);
+	}
 
 }

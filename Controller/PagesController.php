@@ -19,6 +19,7 @@
  */
 
 App::uses('AppController', 'Controller');
+require_once("payment/DPSProcessor.php");
 
 /**
  * Static content controller
@@ -46,9 +47,11 @@ class PagesController extends AppController {
  *	or MissingViewException in debug mode.
  */
 	public function display() {
+
 		$path = func_get_args();
 
 		$count = count($path);
+
 		if (!$count) {
 			return $this->redirect('/');
 		}
@@ -65,7 +68,10 @@ class PagesController extends AppController {
 		}
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 
+		$this->set('msj', $this->Session->read('success'));
+
 		$this->set('passes',$this->Pass->find('all',array('conditions'=>array('Pass.active = 1'))));
+		$this->Session->write('success', 0);
 
 
 		try {
@@ -76,6 +82,7 @@ class PagesController extends AppController {
 			}
 			throw new NotFoundException();
 		}
+
 	}
 
 	public function about(){
@@ -184,19 +191,50 @@ class PagesController extends AppController {
 		return $str;
 	}
 
+	public function response(){
+		$this->autoRender = false;
+		$this->sendMail();	
+
+
+			error_reporting(E_ALL);
+			ini_set('display_errors', 1);
+
+			$dpsUserId = 'FanPassPxP_Dev';
+			$dpsUserKey = '9ee39b943bb27aa0329c1a14593e0235682fdbb615d489385e5c3286ee42fff9';
+
+			$dps = new DPSProcessor($dpsUserId, $dpsUserKey);
+
+			$data = $dps->getResponse();
+
+			$this->Session->write('success', $data['Success']);
+			$this->redirect('/pages/display');
+
+	}
 
 	public function sendMail(){
 		$this->autoRender = false;
 
+		// $from = 'info@3dlinkweb.com';
+		// $to = array($_POST['data']['email']);
+		// $subject = "Fan Pass Code";
+		// $content = $this->__armar_contenido($this->data['code'],$this->data['date'],$this->data['name']);
+		// // $content = "Your code for the pass ".$this->data['name'].", ".$this->data['date']." is ".$this->data['code'];
+		// // debug($content);
+		// $this->__enviar_correo($from, $to, $subject, $content);
+
+		// $this->__setcodeinactive($this->data['passid'],$this->data['idcode']);
+
+		echo $this->Session->read('Person'); // Green
 		$from = 'info@3dlinkweb.com';
-		$to = array($_POST['data']['email']);
+		$to = array($this->Session->read('email'));
 		$subject = "Fan Pass Code";
-		$content = $this->__armar_contenido($this->data['code'],$this->data['date'],$this->data['name']);
+		$content = $this->__armar_contenido($this->Session->read('code'),$this->Session->read('date'),$this->Session->read('name'));
 		// $content = "Your code for the pass ".$this->data['name'].", ".$this->data['date']." is ".$this->data['code'];
 		// debug($content);
 		$this->__enviar_correo($from, $to, $subject, $content);
 
-		$this->__setcodeinactive($this->data['passid'],$this->data['idcode']);
+		$this->__setcodeinactive($this->Session->read('passid'),$this->Session->read('idcode'));
+
 
 		return json_encode(1);
 	}
