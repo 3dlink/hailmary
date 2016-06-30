@@ -71,7 +71,7 @@ class PagesController extends AppController {
 		$this->set('msj', $this->Session->read('success'));
 
 		$this->set('passes',$this->Pass->find('all',array('conditions'=>array('Pass.active = 1'))));
-		$this->Session->write('success', 0);
+		$this->Session->write('success', "");
 
 
 		try {
@@ -193,21 +193,27 @@ class PagesController extends AppController {
 
 	public function response(){
 		$this->autoRender = false;
-		$this->sendMail();	
 
+		error_reporting(E_ALL);
+		ini_set('display_errors', 1);
 
-			error_reporting(E_ALL);
-			ini_set('display_errors', 1);
+		$dpsUserId = 'FanPassPxP_Dev';
+		$dpsUserKey = '9ee39b943bb27aa0329c1a14593e0235682fdbb615d489385e5c3286ee42fff9';
 
-			$dpsUserId = 'FanPassPxP_Dev';
-			$dpsUserKey = '9ee39b943bb27aa0329c1a14593e0235682fdbb615d489385e5c3286ee42fff9';
+		$dps = new DPSProcessor($dpsUserId, $dpsUserKey);
 
-			$dps = new DPSProcessor($dpsUserId, $dpsUserKey);
-
-			$data = $dps->getResponse();
-
-			$this->Session->write('success', $data['Success']);
-			$this->redirect('/pages/display');
+		$data = $dps->getResponse();
+		$this->log($data);
+		if($data['ResponseText'] == "APPROVED"){
+			$this->sendMail();	
+		}
+		if($data['CardHolderName'] == "User Cancelled"){
+			$this->Session->write('success', "");
+		}
+		else{
+			$this->Session->write('success', $data['ResponseText']);
+		}
+		$this->redirect('/pages/display');
 
 	}
 
@@ -224,7 +230,6 @@ class PagesController extends AppController {
 
 		// $this->__setcodeinactive($this->data['passid'],$this->data['idcode']);
 
-		echo $this->Session->read('Person'); // Green
 		$from = 'info@3dlinkweb.com';
 		$to = array($this->Session->read('email'));
 		$subject = "Fan Pass Code";

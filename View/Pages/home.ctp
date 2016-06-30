@@ -85,6 +85,9 @@ $code['code'] = "";
         </div>
       </div>
 
+        <button class=" grab_deal2"  data-toggle="modal" data-target="#deal_confirmation_modal" style="display:none;" type="button"></button>
+
+
       <?php if($sold==1){ ?>
         <button class="hail_btn grab_deal" style="background-color: gray;" type="button" disabled>GRAB DEAL</button>
       <?php }else{ ?>
@@ -172,17 +175,19 @@ $code['code'] = "";
       </div>
 
       <div id="step_3" class="modal-body hidden">
-        <div id="cheers" class="title_img"></div>
+      <div id="empty" class="titleChange">
+        <h1>Cheers!</h1>
+      </div>
         <p class="modal_title">Your unique code is on it’s way.</p>
         <p class="modal_subtitle" id="client_name"></p>
-        <div id="input_tlf">
+       <!--  <div id="input_tlf">
           <div class="form">
             <input type="numer" class="form-control inputs_hail" placeholder="Enter Phone Number (no spaces)" id="phone">
             <a target="_blank" href="" id="code_btn" class="hail_btn" type="button">SEND CODE</a>
             <div id="check"></div>
           </div>
-        </div>
-        <div id="social_container">
+        </div> -->
+        <div id="social_container" style="margin-top: 20px;">
           <div class="socials" style="margin-bottom: 55px;">
             <div class="social_item_l">
               <div class="social" id="fb"></div>
@@ -210,6 +215,7 @@ $code['code'] = "";
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+ 
 
 <script type="text/javascript">
 
@@ -217,11 +223,34 @@ var code;
 var name;
 var date;
 var uname;
+var new_;
+var left;
 $(document).ready(function() {
 
-  if ( $('#statusBuyer').val() == 1 ){
-    $('.grab_deal').click()
-    $('#client_name').html('Thanks <?php echo $this->Session->read("name")?> check your inbox for your code, or if you prefer, we can txt it to your mobile.');
+  if ( $('#statusBuyer').val() != "" ){
+    new_ = "<?php echo '$'.$this->Session->read('price');?>";
+    left = "<?php echo $this->Session->read('left');?>";
+
+    if( $('#statusBuyer').val() == "APPROVED" ){
+      $('#client_name').html('Thanks <?php echo $this->Session->read("name")?> check your inbox for your code.');
+        $('#twitter').attr('href', "https://twitter.com/intent/tweet?original_referer=<?php echo $this->webroot;?>&amp;tw_p=tweetbutton&amp;url="+window.location.href+"&amp;text=I just got a "+new_+" deal for Fan Pass - only "+(left-1)+" left - get in there!");
+    }
+    else{
+      $("#social_container").css("display","none");
+      $(".titleChange").html("<h1>Oops</h1>");
+      $(".modal_title").css("display","none");
+      if( $('#statusBuyer').val() == "DECLINED (U9)" ){
+        $('#client_name').html('Sorry, your card is declined, try another card.');
+      }
+      if( $('#statusBuyer').val() == "DECLINED" ){
+        $('#client_name').html('Sorry, your card has insufficient funds, try another card.');
+      }
+      if( $('#statusBuyer').val() == "CARD EXPIRED" ){
+        $('#client_name').html('Sorry, your card is expired , try another card.');
+      }
+    }
+    
+    $('.grab_deal2').click()
     $('#step_1').addClass('hidden');
     $('#step_3').removeClass('hidden');
   }
@@ -265,7 +294,6 @@ $('.grab_deal').click(function(event) {
   $('#old_modal').html('$'+old);
   $('#new_modal').html(new_);
   code = $(this).parent('.pass').attr('id');
-  $('#twitter').attr('href', "https://twitter.com/intent/tweet?original_referer=<?php echo $this->webroot;?>&amp;tw_p=tweetbutton&amp;url=http://www.hailmary.com&amp;text=I just got a "+new_+" deal for Fan Pass - only "+(left-1)+" left - get in there!");
   
 });
 
@@ -310,7 +338,7 @@ $('#next_btn').click(function(event) {
         if(!pattern.test($('#email').val())){
           alert('Please, enter correct email');
         }else{
-          window.location = '<?php echo $this->webroot; ?>passes/buy/'+uname+'/'+$('#email').val()+'/'+idcode+'/'+passid+'/'+code+'/'+new_;
+          window.location = '<?php echo $this->webroot; ?>passes/buy/'+uname+'/'+$('#email').val()+'/'+idcode+'/'+passid+'/'+code+'/'+new_+'/'+date+'/'+left;
           // $('#client_name').html('Thanks '+$('#name').val()+' check your inbox for your code, or if you prefer, we can txt it to your mobile.');
           // $('#step_1').addClass('hidden');
           // $('#step_2').removeClass('hidden');

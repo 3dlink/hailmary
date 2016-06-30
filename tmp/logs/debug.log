@@ -1,0 +1,27 @@
+2016-06-27 23:52:32 Debug: Notice (8): Undefined index: avatar in [C:\xampp\htdocs\hailmary\Plugin\Usermgmt\Controller\UsersController.php, line 169]
+Trace:
+UsersController::login() - APP\Plugin\Usermgmt\Controller\UsersController.php, line 169
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP\cakephp\lib\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - APP\cakephp\lib\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - APP\cakephp\lib\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 109
+
+2016-06-28 00:22:59 Debug: Notice (8): Undefined index: avatar in [C:\xampp\htdocs\hailmary\Plugin\Usermgmt\Controller\UsersController.php, line 169]
+Trace:
+UsersController::login() - APP\Plugin\Usermgmt\Controller\UsersController.php, line 169
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP\cakephp\lib\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - APP\cakephp\lib\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - APP\cakephp\lib\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 109
+
+2016-06-28 01:26:24 Debug: Notice (8): Undefined index: avatar in [C:\xampp\htdocs\hailmary\Plugin\Usermgmt\Controller\UsersController.php, line 169]
+Trace:
+UsersController::login() - APP\Plugin\Usermgmt\Controller\UsersController.php, line 169
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP\cakephp\lib\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - APP\cakephp\lib\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - APP\cakephp\lib\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 109
+

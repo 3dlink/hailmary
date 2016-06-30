@@ -242,7 +242,7 @@ class PassesController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 
-	public function buy($name,$email,$idcode,$passid,$code,$price){
+	public function buy($name,$email,$idcode,$passid,$code,$price,$date,$left){
 		$this->layout=false;
 		$this->autoRender=false;
 		$price = str_replace("$", "", $price);
@@ -252,6 +252,9 @@ class PassesController extends AppController {
 		$this->Session->write('passid', $passid);
 		$this->Session->write('code', $code);
 		$this->Session->write('price', $price);
+		$this->Session->write('date', $date);
+		$this->Session->write('left', $left);
+
 
 
 		// echo $this->Session->read('Person'); // Green
@@ -262,16 +265,15 @@ class PassesController extends AppController {
 		// $successUrl = 'http://hailmary.co.nz/payments/response.php';
 		// $failUrl = 'http://hailmary.co.nz/payments/response.php';
 
-		$successUrl = 'http://localhost/3d/hailmary/pages/response';
-		$failUrl = 'http://localhost/3d/hailmary/pages/response';
+		$successUrl = "http://".$_SERVER["SERVER_NAME"].$this->webroot.'pages/response';
+		$failUrl = "http://".$_SERVER["SERVER_NAME"].$this->webroot.'pages/response';
 
 		$dps = new DPSProcessor($dpsUserId, $dpsUserKey);
 
 		$transactionId=uniqid();
 
 		$url = $dps->redirectToGateway($transactionId,'testPayment', $price, 'some txt data', 'pchalacis@gmail.com', $successUrl, $failUrl);
-				echo $url;
-		return $this->redirect($url);
+		$this->redirect($url);
 	}
 
 }

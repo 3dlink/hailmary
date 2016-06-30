@@ -1,0 +1,229 @@
+2016-06-27 23:49:50 Error: Array
+(
+    [Success] => 0
+    [amount] => 2.00
+    [AuthCode] => 
+    [CardNumber] => 499999........96
+    [DpsBillingId] => 
+    [BillingId] => 
+    [CardHolderName] => CESAR
+    [DpsTxnRef] => 00000003203b790d
+    [TxnType] => Purchase
+    [TxnData] => some txt data
+    [ClientInfo] => 190.74.48.6
+    [TransactionId] => 5771f3cb4ea81
+    [EmailAddress] => pchalacis@gmail.com
+    [MerchantReference] => testPayment
+    [ResponseText] => CARD EXPIRED
+)
+
+2016-06-27 23:51:05 Error: Array
+(
+    [Success] => 0
+    [amount] => 2.00
+    [AuthCode] => 
+    [CardNumber] => 499999........02
+    [DpsBillingId] => 
+    [BillingId] => 
+    [CardHolderName] => CEAS
+    [DpsTxnRef] => 00000003203b7d33
+    [TxnType] => Purchase
+    [TxnData] => some txt data
+    [ClientInfo] => 190.74.48.6
+    [TransactionId] => 5771f41178a6e
+    [EmailAddress] => pchalacis@gmail.com
+    [MerchantReference] => testPayment
+    [ResponseText] => DECLINED (U9)
+)
+
+2016-06-27 23:51:38 Error: Array
+(
+    [Success] => 0
+    [amount] => 2.00
+    [AuthCode] => 
+    [CardNumber] => 543111........28
+    [DpsBillingId] => 
+    [BillingId] => 
+    [CardHolderName] => CESAR
+    [DpsTxnRef] => 00000003203b8037
+    [TxnType] => Purchase
+    [TxnData] => some txt data
+    [ClientInfo] => 190.74.48.6
+    [TransactionId] => 5771f43c7de43
+    [EmailAddress] => pchalacis@gmail.com
+    [MerchantReference] => testPayment
+    [ResponseText] => DECLINED
+)
+
+2016-06-27 23:54:01 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [C:\xampp\htdocs\hailmary\cakephp\lib\Cake\Model\Datasource\DboSource.php, line 458]
+2016-06-27 23:54:01 Error: [InternalErrorException] Internal Server Error
+Request URL: /hailmary/passes/edit/1
+Stack Trace:
+#0 C:\xampp\htdocs\hailmary\cakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Maximum executi...', 'C:\\xampp\\htdocs...', 458)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', 'C:\\xampp\\htdocs...', 458, Array)
+#2 C:\xampp\htdocs\hailmary\cakephp\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', 'C:\\xampp\\htdocs...', 458, Array)
+#3 C:\xampp\htdocs\hailmary\cakephp\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-27 23:57:15 Error: Array
+(
+    [Success] => 1
+    [amount] => 21.00
+    [AuthCode] => 155710
+    [CardNumber] => 543111........11
+    [DpsBillingId] => 
+    [BillingId] => 
+    [CardHolderName] => CESAR
+    [DpsTxnRef] => 00000003203b966e
+    [TxnType] => Purchase
+    [TxnData] => some txt data
+    [ClientInfo] => 190.74.48.6
+    [TransactionId] => 5771f58cd8395
+    [EmailAddress] => pchalacis@gmail.com
+    [MerchantReference] => testPayment
+    [ResponseText] => APPROVED
+)
+
+2016-06-28 00:22:38 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [C:\xampp\htdocs\hailmary\cakephp\lib\Cake\Model\Datasource\DboSource.php, line 1010]
+2016-06-28 00:22:38 Error: [InternalErrorException] Internal Server Error
+Request URL: /hailmary/passes/edit/1
+Stack Trace:
+#0 C:\xampp\htdocs\hailmary\cakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Maximum executi...', 'C:\\xampp\\htdocs...', 1010)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', 'C:\\xampp\\htdocs...', 1010, Array)
+#2 C:\xampp\htdocs\hailmary\cakephp\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', 'C:\\xampp\\htdocs...', 1010, Array)
+#3 C:\xampp\htdocs\hailmary\cakephp\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-06-28 01:12:36 Error: Array
+(
+    [Success] => 0
+    [amount] => 32.00
+    [AuthCode] => 
+    [CardNumber] => 000000........00
+    [DpsBillingId] => 
+    [BillingId] => 
+    [CardHolderName] => User Cancelled
+    [DpsTxnRef] => 00000003203cb4ba
+    [TxnType] => Purchase
+    [TxnData] => some txt data
+    [ClientInfo] => 190.74.48.6
+    [TransactionId] => 57720733f2383
+    [EmailAddress] => pchalacis@gmail.com
+    [MerchantReference] => testPayment
+    [ResponseText] => DECLINED
+)
+
+2016-06-28 01:14:39 Error: Array
+(
+    [Success] => 0
+    [amount] => 32.00
+    [AuthCode] => 
+    [CardNumber] => 000000........00
+    [DpsBillingId] => 
+    [BillingId] => 
+    [CardHolderName] => User Cancelled
+    [DpsTxnRef] => 00000003203cbc06
+    [TxnType] => Purchase
+    [TxnData] => some txt data
+    [ClientInfo] => 190.74.48.6
+    [TransactionId] => 577207ae8da2e
+    [EmailAddress] => pchalacis@gmail.com
+    [MerchantReference] => testPayment
+    [ResponseText] => DECLINED
+)
+
+2016-06-28 01:21:34 Error: Array
+(
+    [Success] => 1
+    [amount] => 32.00
+    [AuthCode] => 172123
+    [CardNumber] => 543111........11
+    [DpsBillingId] => 
+    [BillingId] => 
+    [CardHolderName] => CASASD
+    [DpsTxnRef] => 00000003203cdf30
+    [TxnType] => Purchase
+    [TxnData] => some txt data
+    [ClientInfo] => 190.74.48.6
+    [TransactionId] => 57720946f3c67
+    [EmailAddress] => pchalacis@gmail.com
+    [MerchantReference] => testPayment
+    [ResponseText] => APPROVED
+)
+
+2016-06-28 01:24:29 Error: Array
+(
+    [Success] => 1
+    [amount] => 32.00
+    [AuthCode] => 172420
+    [CardNumber] => 411111........11
+    [DpsBillingId] => 
+    [BillingId] => 
+    [CardHolderName] => SADSADAS
+    [DpsTxnRef] => 00000003203cf0bb
+    [TxnType] => Purchase
+    [TxnData] => some txt data
+    [ClientInfo] => 190.74.48.6
+    [TransactionId] => 577209f8c1860
+    [EmailAddress] => pchalacis@gmail.com
+    [MerchantReference] => testPayment
+    [ResponseText] => APPROVED
+)
+
+2016-06-28 01:27:29 Error: Array
+(
+    [Success] => 1
+    [amount] => 32.00
+    [AuthCode] => 172718
+    [CardNumber] => 411111........11
+    [DpsBillingId] => 
+    [BillingId] => 
+    [CardHolderName] => CASDASD
+    [DpsTxnRef] => 00000003203d0254
+    [TxnType] => Purchase
+    [TxnData] => some txt data
+    [ClientInfo] => 190.74.48.6
+    [TransactionId] => 57720aac35736
+    [EmailAddress] => pchalacis@gmail.com
+    [MerchantReference] => testPayment
+    [ResponseText] => APPROVED
+)
+
+2016-06-28 01:36:40 Error: Array
+(
+    [Success] => 1
+    [amount] => 32.00
+    [AuthCode] => 172718
+    [CardNumber] => 411111........11
+    [DpsBillingId] => 
+    [BillingId] => 
+    [CardHolderName] => CASDASD
+    [DpsTxnRef] => 00000003203d0254
+    [TxnType] => Purchase
+    [TxnData] => some txt data
+    [ClientInfo] => 190.74.48.6
+    [TransactionId] => 57720aac35736
+    [EmailAddress] => pchalacis@gmail.com
+    [MerchantReference] => testPayment
+    [ResponseText] => APPROVED
+)
+
+2016-06-28 01:49:11 Error: Array
+(
+    [Success] => 1
+    [amount] => 32.00
+    [AuthCode] => 174859
+    [CardNumber] => 411111........11
+    [DpsBillingId] => 
+    [BillingId] => 
+    [CardHolderName] => ADSADASD
+    [DpsTxnRef] => 00000003203d598d
+    [TxnType] => Purchase
+    [TxnData] => some txt data
+    [ClientInfo] => 190.74.48.6
+    [TransactionId] => 57720fc059ac3
+    [EmailAddress] => pchalacis@gmail.com
+    [MerchantReference] => testPayment
+    [ResponseText] => APPROVED
+)
+
