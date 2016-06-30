@@ -128,7 +128,8 @@ $code['code'] = "";
           </div>
           <div class="col-md-6">
             <!-- <a target="_blank" href="<?php echo $this->webroot;?>">NEXT</a> -->
-            <button id="next_btn" class="hail_btn" type="button">NEXT</button>
+            <button id="next_btn" class="hail_btn" type="button">Proceed to Payment</button>
+            <p class="redirect_exp">You’re going to be redirected to our payment gateway, where you can enter your credit card details</p>
           </div>
         </div>
       </div>
@@ -326,6 +327,18 @@ $('#deal_confirmation_modal').on('hidden.bs.modal', function () {
   $('#step_3').addClass('hidden');
   location.reload();
 })
+
+
+$(document).keypress(function(e) {
+  if(e.which == 13) {
+    if((!$('#step_1').hasClass('hidden')) && ($('#deal_confirmation_modal').hasClass('in'))){
+      $('#next_btn').click();
+    }
+  }
+});
+  
+
+
 
 $('#next_btn').click(function(event) {
   if( $('#statusBuyer').val() != 1 ){ 

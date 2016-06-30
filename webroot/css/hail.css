@@ -326,10 +326,18 @@ label a, #step_2 a, #step_3 #social_container a {
 }
 
 #next_btn {
-	float: right;
-	margin: 0;
-  margin-top: 100px;
+  float: right;
+  margin: 0;
+  margin-top: 65px;
   height: 40px;
+  margin-bottom: 10px;
+  width: 190px !important;
+}
+
+.redirect_exp{
+  float: right;
+  font-size: 9px;
+  text-align: right;
 }
 
 .hidden {
