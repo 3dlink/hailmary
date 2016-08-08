@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 3dlink
-Source Server Version : 50550
-Source Host           : www.3dlinkweb.com:3306
-Source Database       : dlinkweb_hail
+Source Server         : local
+Source Server Version : 50505
+Source Host           : localhost:3306
+Source Database       : hailmary
 
 Target Server Type    : MYSQL
-Target Server Version : 50550
+Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-08-02 10:03:58
+Date: 2016-08-08 16:02:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,11 +25,13 @@ CREATE TABLE `codes` (
   `active` int(11) DEFAULT '1',
   `pass_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of codes
 -- ----------------------------
+INSERT INTO `codes` VALUES ('36', 'FYH8FG', '0', '2');
+INSERT INTO `codes` VALUES ('37', 'LYGEBB', '1', '2');
 
 -- ----------------------------
 -- Table structure for games
@@ -41,11 +43,12 @@ CREATE TABLE `games` (
   `image` varchar(255) DEFAULT NULL,
   `pass_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of games
 -- ----------------------------
+INSERT INTO `games` VALUES ('37', 'asdasd', null, '2');
 
 -- ----------------------------
 -- Table structure for login_tokens
@@ -82,11 +85,78 @@ CREATE TABLE `passes` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of passes
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for texts
+-- ----------------------------
+DROP TABLE IF EXISTS `texts`;
+CREATE TABLE `texts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `faq` text,
+  `about` text,
+  `contact` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of texts
+-- ----------------------------
+INSERT INTO `texts` VALUES ('1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_group_id` int(11) unsigned DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `salt` text,
+  `email` varchar(100) DEFAULT NULL,
+  `first_name` varchar(100) DEFAULT NULL,
+  `last_name` varchar(100) DEFAULT NULL,
+  `email_verified` int(1) DEFAULT '0',
+  `active` int(1) NOT NULL DEFAULT '0',
+  `ip_address` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user` (`username`),
+  KEY `mail` (`email`),
+  KEY `users_FKIndex1` (`user_group_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES ('1', '1', 'admin', '365caef7fccbdb1ee711f084be9317a7', '1e6d99570a4d37cc29b18c4a6b06e6ed', 'admin@admin.com', 'Admin', '', '1', '1', '', '2016-03-29 09:55:25', '2016-03-29 09:55:25');
+
+-- ----------------------------
+-- Table structure for user_groups
+-- ----------------------------
+DROP TABLE IF EXISTS `user_groups`;
+CREATE TABLE `user_groups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `alias_name` varchar(100) DEFAULT NULL,
+  `allowRegistration` int(1) NOT NULL DEFAULT '1',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of user_groups
+-- ----------------------------
+INSERT INTO `user_groups` VALUES ('1', 'Admin', 'Admin', '0', '2016-03-29 09:55:26', '2016-03-29 09:55:26');
+INSERT INTO `user_groups` VALUES ('2', 'User', 'User', '1', '2016-03-29 09:55:26', '2016-03-29 09:55:26');
+INSERT INTO `user_groups` VALUES ('3', 'Guest', 'Guest', '0', '2016-03-29 09:55:26', '2016-03-29 09:55:26');
 
 -- ----------------------------
 -- Table structure for user_group_permissions
@@ -99,7 +169,7 @@ CREATE TABLE `user_group_permissions` (
   `action` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `allowed` tinyint(1) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of user_group_permissions
@@ -197,53 +267,6 @@ INSERT INTO `user_group_permissions` VALUES ('90', '3', 'Pages', 'faq', '1');
 INSERT INTO `user_group_permissions` VALUES ('91', '1', 'Pages', 'contact', '1');
 INSERT INTO `user_group_permissions` VALUES ('92', '2', 'Pages', 'contact', '1');
 INSERT INTO `user_group_permissions` VALUES ('93', '3', 'Pages', 'contact', '1');
-
--- ----------------------------
--- Table structure for user_groups
--- ----------------------------
-DROP TABLE IF EXISTS `user_groups`;
-CREATE TABLE `user_groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT NULL,
-  `alias_name` varchar(100) DEFAULT NULL,
-  `allowRegistration` int(1) NOT NULL DEFAULT '1',
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of user_groups
--- ----------------------------
-INSERT INTO `user_groups` VALUES ('1', 'Admin', 'Admin', '0', '2016-03-29 09:55:26', '2016-03-29 09:55:26');
-INSERT INTO `user_groups` VALUES ('2', 'User', 'User', '1', '2016-03-29 09:55:26', '2016-03-29 09:55:26');
-INSERT INTO `user_groups` VALUES ('3', 'Guest', 'Guest', '0', '2016-03-29 09:55:26', '2016-03-29 09:55:26');
-
--- ----------------------------
--- Table structure for users
--- ----------------------------
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_group_id` int(11) unsigned DEFAULT NULL,
-  `username` varchar(100) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `salt` text,
-  `email` varchar(100) DEFAULT NULL,
-  `first_name` varchar(100) DEFAULT NULL,
-  `last_name` varchar(100) DEFAULT NULL,
-  `email_verified` int(1) DEFAULT '0',
-  `active` int(1) NOT NULL DEFAULT '0',
-  `ip_address` varchar(50) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user` (`username`),
-  KEY `mail` (`email`),
-  KEY `users_FKIndex1` (`user_group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of users
--- ----------------------------
-INSERT INTO `users` VALUES ('1', '1', 'admin', '365caef7fccbdb1ee711f084be9317a7', '1e6d99570a4d37cc29b18c4a6b06e6ed', 'admin@admin.com', 'Admin', '', '1', '1', '', '2016-03-29 09:55:25', '2016-03-29 09:55:25');
+INSERT INTO `user_group_permissions` VALUES ('94', '1', 'Passes', 'buy', '1');
+INSERT INTO `user_group_permissions` VALUES ('95', '2', 'Passes', 'buy', '1');
+INSERT INTO `user_group_permissions` VALUES ('96', '3', 'Passes', 'buy', '1');

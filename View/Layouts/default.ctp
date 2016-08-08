@@ -43,7 +43,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<div id="container">
 		<div id="header">
 			<div id="logo" onclick="window.location.href='<?php echo $this->webroot;?>'"></div>
-			<div id="about"><a href="<?php echo $this->webroot; ?>about">ABOUT</a></div>
+			<div class="admin_item"><a href="<?php echo $this->webroot; ?>about">ABOUT</a></div>
 		</div>
 		<div id="content">
 			<?php echo $this->Session->flash(); ?>

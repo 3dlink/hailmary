@@ -29,6 +29,7 @@ class UserGroupPermissionsController extends UserMgmtAppController {
 	 * @return array
 	 */
 	public function index() {
+		$this->layout="admin";
 		$c=-2;
 		if (isset($_GET['c']) && $_GET['c'] !='') {
 			$c=$_GET['c'];

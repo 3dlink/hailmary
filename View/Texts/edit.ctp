@@ -2,7 +2,7 @@
 <?php echo $this->Form->create('Text'); ?>
 <?php	echo $this->Form->input('id');?>
     <fieldset>
-      <legend>Add Texts</legend>
+      <legend>Edit Texts</legend>
       <div class="margenesHorizontales">
 
 				<div class="col-md-12">

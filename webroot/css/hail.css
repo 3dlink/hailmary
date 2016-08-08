@@ -66,11 +66,12 @@ body {
 	cursor: pointer;
 }
 
-#about{
+.admin_item{
 	float: right;
 	padding-top: 14px;
+	margin-left: 20px;
 }
-#about a {
+.admin_item a {
 	color: white;
 	font-weight: bold;
 }

@@ -25,3 +25,5 @@ Dispatcher::_invoke() - APP\cakephp\lib\Cake\Routing\Dispatcher.php, line 191
 Dispatcher::dispatch() - APP\cakephp\lib\Cake\Routing\Dispatcher.php, line 165
 [main] - APP\webroot\index.php, line 109
 
+2016-08-08 10:52:29 Debug: permission: actionUrl-passes/buy
+2016-08-08 10:57:47 Debug: permission: actionUrl-passes/buy

@@ -10,23 +10,23 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version());
 		Hail Mary Admin
 	</title>
     <?php 
-    echo $this->Html->meta('icon');
+      echo $this->Html->meta('icon');
 
-    echo $this->Html->css('bootstrap.min');
-    echo $this->Html->css('dropzone');
-    echo $this->Html->css('hail');
-    echo $this->Html->css('admin');
-    echo $this->Html->css('bootstrap-datetimepicker.min');
-    echo $this->Html->script('jquery-2.2.0.min');
-    echo $this->Html->script('bootstrap.min');
-    echo $this->Html->script('pekeUpload');
-    echo $this->Html->script('moment.js');
-    echo $this->Html->script('bootstrap-datetimepicker.min');
-    echo $this->Html->script('dropzone');
+      echo $this->Html->css('bootstrap.min');
+      echo $this->Html->css('dropzone');
+      echo $this->Html->css('hail');
+      echo $this->Html->css('admin');
+      echo $this->Html->css('bootstrap-datetimepicker.min');
+      echo $this->Html->script('jquery-2.2.0.min');
+      echo $this->Html->script('bootstrap.min');
+      echo $this->Html->script('pekeUpload');
+      echo $this->Html->script('moment.js');
+      echo $this->Html->script('bootstrap-datetimepicker.min');
+      echo $this->Html->script('dropzone');
 
-    echo $this->fetch('meta');
-    echo $this->fetch('css');
-    echo $this->fetch('script');
+      echo $this->fetch('meta');
+      echo $this->fetch('css');
+      echo $this->fetch('script');
     ?>
     
 <script type="text/javascript">WEBROOT='<?php echo $this->webroot; ?>';</script>
@@ -35,7 +35,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version());
 
     <header id="header">
       <div id="logo" onclick="window.location.href='<?php echo $this->webroot;?>'"></div>
-      <div id="about"><a href="<?php echo $this->webroot; ?>about">ABOUT</a></div>
+      <div class="admin_item"><a href="<?php echo $this->webroot; ?>changePassword">CHANGE PASSWORD</a></div>
+      <div class="admin_item"><a href="<?php echo $this->webroot; ?>permissions">PERMISSIONS</a></div>
+      <div class="admin_item"><a href="<?php echo $this->webroot; ?>texts/edit/1">TEXTS</a></div>
+      <div class="admin_item"><a href="<?php echo $this->webroot; ?>passes">PASSES</a></div>
     </header>
     <section class="container">
     <?php echo $this->Session->flash(); ?>
